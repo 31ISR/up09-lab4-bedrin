@@ -13,5 +13,6 @@ urlpatterns = [
     path('posts/', include('posts.urls')),
     path('communities/', include('communities.urls')),
     path('', views.index),
+    path('', include('communities.urls')),
 ]
 
