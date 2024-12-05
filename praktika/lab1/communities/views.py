@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
-def posts_list(req):
+def communities(req):
     return render(req, 'communities/communities.html')
 # Create your views here.
