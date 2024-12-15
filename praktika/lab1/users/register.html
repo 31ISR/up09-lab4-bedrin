@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block title %} Регистрация {% endblock %} {%
+    block content %}
+    <style>
+        .register-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <h1>Регистрация нового пользователя</h1>
+    <form class="form-with-validation" action="/users/register/" method="post">
+        {% csrf_token %} {{ form }}
+        <button class="form-submit">Отправить</button>
+    </form>
+
+    <nav>
+        <a href="/">Главная</a>
+        <button class="register-button" type="button"><a href="{% url 'register' %}" style="color: white; text-decoration: none;">Регистрация</a></button>
+    </nav>
+
+    {% endblock %}
