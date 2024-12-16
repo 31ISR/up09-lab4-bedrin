@@ -8,8 +8,3 @@ urlpatterns = [
     path('register/', views.register_view, name='register'),
     path('login/', views.login_view, name="login")
 ]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
-]
