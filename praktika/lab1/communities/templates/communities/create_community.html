@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    New Community
+{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Создать сообщество</h1>
+    <form class="form-with-validation" action="{% url 'communities:new-community' %}" method="post" enctype="multipart/form-data"></form>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать сообщество</button>
+    </form>
+</section>
+{% endblock %}
