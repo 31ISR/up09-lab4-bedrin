@@ -3,10 +3,6 @@
 
 <section>
     <h1>Posts</h1>
-
-
-
-
     {% for post in posts %}
     <article class="post">
         <h2>
@@ -14,6 +10,7 @@
         </h2>
         <p>{{ post.date }}</p>
         <p>{{ post.body }}</p>
+        <p>Автор: {{ post.author }}</p>
     </article>
     {% endfor %}
 </section>

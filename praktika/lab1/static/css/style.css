@@ -1,38 +1,104 @@
-* {
+/* Basic resets */
+body, h1, h2, h3, p, ul, li, a, div, nav, main, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: aqua;
-    font-size: 3rem;
-    margin: 0%;
-    min-height: 100vh;
-    display: flex;
-    flex-flow: column
+/* Body styling */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    padding-top: 56px;
 }
 
-h1, p {
-    text-align: center;
+/* Navbar styling */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-main {
-    flex-grow: 1;
-    display: grid;
-    place-content: center;
+.navbar-nav .nav-link {
+    color: #007bff;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
 }
 
-a {
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
+}
+
+.nav-link.active {
+    font-weight: 700;
+    color: #0056b3;
+}
+
+/* Special links styling */
+.navbar-nav .nav-item a:not(.nav-link),
+.navbar-nav a[href="{% url 'posts:new-post' %}"],
+.navbar-nav a[href="{% url 'communities:new-community' %}"],
+.navbar-nav a[href="{% url 'users:register' %}"],
+.navbar-nav a[href="{% url 'users:login' %}"] {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
     text-decoration: none;
-    color: #81dbb8;
+    transition: background-color 0.3s ease;
 }
 
-a:hover {
-    opacity: .85;
+.navbar-nav .nav-item a:not(.nav-link):hover {
+    background-color: #0056b3;
+}
+
+/* Button styling for form */
+button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #c82333;
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-link, 
+    .navbar-nav .nav-item a:not(.nav-link) {
+        margin-bottom: 10px;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
 }
